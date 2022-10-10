@@ -4,6 +4,8 @@ import "plyr-react/dist/plyr.css";
 import Hls from "hls.js";
 import { Options } from "plyr";
 
+
+
 const videoOptions = null;
 const videoSource = null;
 const hlsSource = "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8";
@@ -29,6 +31,8 @@ const useHls = (src: string, options: Options | null) => {
      * NOTE: you can only start play the audio here
      * Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first.
      */
+     
+     
     hls.current.on(Hls.Events.MANIFEST_PARSED, () => {
       if (hasQuality.current) return; // early quit if already set
 

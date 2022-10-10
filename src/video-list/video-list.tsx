@@ -4,9 +4,8 @@ import contents from "./contents.json";
 
 export default function VideoList() {
   return (
-    <ul className="video-list">
-      {contents.videos.map((video) => (
-        <li key={video.id} className="video-item">
+    <>
+    {contents.videos}
           <Plyr
             source={{
               type: "video",
@@ -14,8 +13,13 @@ export default function VideoList() {
               sources: [{ src: video.id, provider: video.source }],
             }}
           />
-        </li>
-      ))}
-    </ul>
+    </>
+    // <ul className="video-list">
+    //   {contents.videos.map((video) => (
+    //     <li key={video.id} className="video-item">
+    
+        // </li>
+      // ))}
+    // </ul>
   );
 }
