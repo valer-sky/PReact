@@ -50,7 +50,11 @@ const useHls = (src: string, options: Options | null) => {
           });
         },
       };
-      setPlyrOptions({ ...plyrOptions, quality });
+
+      // const subtitles: Options["captions"] = {
+      //   active: false, language: 'auto', update: false
+      // }
+      setPlyrOptions({ ...plyrOptions, quality, });
       hasQuality.current = true;
     });
   });
@@ -76,6 +80,7 @@ const PlyrComponent = () => {
 
   return (
     <div className="wrapper">
+      <h1>Plyr</h1>
       {supported ? (
         <CustomPlyrInstance
           ref={ref}
