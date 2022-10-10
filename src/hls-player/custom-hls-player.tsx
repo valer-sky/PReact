@@ -1,5 +1,6 @@
 import * as React from "react";
-import { APITypes, PlyrProps, usePlyr } from "plyr-react";
+import { APITypes, PlyrProps, usePlyr} from "plyr-react";
+import YouTube from "plyr-react";
 import "plyr-react/dist/plyr.css";
 import Hls from "hls.js";
 import { Options } from "plyr";
