@@ -14,8 +14,9 @@ const hlsSource = "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8";
 const useHls = (src: string, options: Options | null) => {
   const hls = React.useRef<Hls>(new Hls());
   const hasQuality = React.useRef<boolean>(false);
+  
   const [plyrOptions, setPlyrOptions] = React.useState<Options | null>(options);
-
+  
   React.useEffect(() => {
     hasQuality.current = false;
   }, [options]);
@@ -38,6 +39,7 @@ const useHls = (src: string, options: Options | null) => {
       if (hasQuality.current) return; // early quit if already set
 
       const levels = hls.current.levels;
+      
       const quality: Options["quality"] = {
         default: levels[levels.length - 1].height,
         options: levels.map((level: any) => level.height),
@@ -51,7 +53,7 @@ const useHls = (src: string, options: Options | null) => {
           });
         },
       };
-
+      
       // const subtitles: Options["captions"] = {
       //   active: false, language: 'auto', update: false
       // }
